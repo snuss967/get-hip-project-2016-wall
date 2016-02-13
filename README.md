@@ -1,6 +1,7 @@
-Wall is a project in development that will serve as an online web utility that keeps track of thoughts, notes, and anything else.
+﻿Wall is a project in development that will serve as an online web utility that keeps track of thoughts, notes, and anything else.
 
 Roles:
+	
 	Jason
 		Server Side
 		Front End Design
