@@ -22,7 +22,6 @@ import com.j256.ormlite.dao.Dao;
 
 @Path("/walls")
 public class ProfileResource {
-//Need to Modify the Paths in the FoundStatus links.
 	@GET
 	@Path("/{wallName}")
 	@Produces("application/json")
