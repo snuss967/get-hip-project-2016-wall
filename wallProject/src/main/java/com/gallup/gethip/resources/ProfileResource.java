@@ -19,27 +19,39 @@ import com.gallup.gethip.DataSourceManager;
 import com.gallup.gethip.model.Wall;
 import com.j256.ormlite.dao.Dao;
 
+import AdditonalJSONStrucutreDocuments.FoundStatus;
+
 @Path("/walls")
 public class ProfileResource {
-	
+//Need to Modify the Paths in the FoundStatus links.
 	@GET
 	@Path("/{wallName}")
 	@Produces("application/json")
-	public Wall getWall(@PathParam("wallName") String wallName) {
+	public FoundStatus getWall(@PathParam("wallName") String wallName) {
+		FoundStatus found;
 		Wall pro = null;
+		//why is this called pro?
 		try {
+			//If it is sucessful when we search for the wall we will get a JSON document that is returned
+			//telling us that the wall is found and will point us to where we need to make our GetRequest
+			//If it is unsucessful when we search for the wall we will get a JSON document that is returned
+			//telling us that the wall was not found and it will point us to where we need to make our post request
+			//after the user confirms that they want to create a new Wall
 			pro = getDao().queryForId(wallName);
 			if(pro == null){
-				System.out.println("Error: Profile not found.");
+				found = new FoundStatus(false, "Path");
+				return found;
 			}else{
-				return pro;
+				found = new FoundStatus(true, "Path");
+				return found;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Error.");
 		}			
 			
-		return pro;
+		 found = new FoundStatus(false, "Redirect To Main Page");
+		 return found;
 	}
 		
 	@POST
@@ -60,7 +72,7 @@ public class ProfileResource {
     	return  null;
 		
 	}
-	
+
 	@PUT
 	@Produces("text/plain")
     @Consumes("application/json")
