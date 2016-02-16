@@ -1,4 +1,4 @@
-package AdditonalJSONStrucutreDocuments;
+package AdditonalJSONStructureDocuments;
 
 import javax.xml.bind.annotation.XmlElement;
 
