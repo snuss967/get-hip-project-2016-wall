@@ -18,12 +18,14 @@ import java.sql.SQLException;
 public class Main {
 	
 	private static void createDatabaseConnection(){
-		String databaseUrl = "jdbc:mysql://localhost:3306/walldatabase";
+		String databaseUrl = "jdbc:mysql://45.55.93.26:3306/?user=wall";
+		//updated the connection String to match James' server
 		ConnectionSource connectionSource;
 		try {
 			connectionSource = new JdbcConnectionSource(databaseUrl);
-			((JdbcConnectionSource)connectionSource).setUsername("jason");
-			((JdbcConnectionSource)connectionSource).setPassword("wall");
+			//updated login information to log into database on James' Server
+			((JdbcConnectionSource)connectionSource).setUsername("wall");
+			((JdbcConnectionSource)connectionSource).setPassword("gethip");
 			DataSourceManager.setConnectionSource(connectionSource);
 		} catch (SQLException e) {
 			e.printStackTrace();
