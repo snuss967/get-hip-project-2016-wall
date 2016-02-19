@@ -1,0 +1,3 @@
+Need To Do:
+In the addRowToTableMethod add JavaScript and HTML to create a new Note based upon those parameters
+Need To Test The Delete Note Function to be sure that it is getting the right row number.
