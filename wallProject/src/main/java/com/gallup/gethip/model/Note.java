@@ -16,8 +16,11 @@ public class Note {
 	@DatabaseField(columnName = "message")
 	private String message;
 	
-	@DatabaseField(columnName = "date")
+	@DatabaseField(columnName = "date")	
 	private Date created;
+	
+	@DatabaseField(columnName = "color")
+	private String color;
 	
 	@DatabaseField(columnName = "author")
 	private String author;
@@ -32,7 +35,14 @@ public class Note {
 		this.created = new Date();
 		this.author = author;
 	}
-	
+	public String getColor()
+	{
+		return color;
+	}
+	public void setColor(String color)
+	{
+		this.color = color;
+	}
 	public long getId() {
 		return id;
 	}
