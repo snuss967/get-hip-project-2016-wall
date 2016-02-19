@@ -19,7 +19,7 @@ public class Note {
 	@DatabaseField(columnName = "date")	
 	private Date created;
 	
-	@DatabaseField(columnName = "color")
+	@DatabaseField(columnName = "color", width = 6)
 	private String color;
 	
 	@DatabaseField(columnName = "author")
